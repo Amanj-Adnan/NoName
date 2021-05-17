@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  get 'profile' , to: "user#show"
-  get 'test/show'
+  root  "home#show"
+  get "sign_up" , to: "register#create"
+  post "sign_up" , to: "register#created"
+
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
