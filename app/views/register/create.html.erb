@@ -14,6 +14,14 @@
     </div>
 
     <%= form_with model: @user ,url: sign_up_path ,html: {class:"mt-8 space-y-6"} do |form| %>
+      <%if @user.errors.any? %>
+        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+          <strong class="font-bold">Holy smokes!</strong>
+          <% @user.errors.full_messages.each do |message|   %>
+          <span class="block sm:inline"><%=message %></span>
+          <%end %>
+        </div>
+      <%end %>
       <%= form.label :email, "Email Address:" %>
       <%= form.text_field :email, class:"appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" %>
       <%= form.label :password_digest, "Password:" %>
