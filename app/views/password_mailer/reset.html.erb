@@ -1,0 +1,5 @@
+<h1>Password#reset</h1>
+
+<%= params[:user].email %>
+
+<%= link_to "Reset Password",  password_reset_edit_url(token:@token) %>
