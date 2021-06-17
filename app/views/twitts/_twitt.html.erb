@@ -1,0 +1,26 @@
+<div class="mb-3 text-l font-semibold text-gray-700 border rounded-r">
+
+  <div class="flex flex-col    m-3 p-3  " >
+    <div class="grid grid-cols-3 justify-between" >
+      <div class="col-span-2"> <%= link_to twitt.twitter_account.username, class: "text-m font-semibold text-gray-700" %> :will post that</div>
+      <div><%= image_tag twitt.twitter_account.image, class: "rounded-full h-16 w-16 flex items-center justify-center" %></div>
+
+     <div class="col-span-3 "> <%=twitt.body %></div>
+      <div class="col-span-2" >
+        <hr></div>
+    <div class="col-span-3 justify-center">
+      <% if twitt.published? %>
+        <%= link_to "view tweet" , "https://twitter.com/#{twitt.twitter_account.username}/status/#{twitt.twitt_id}" , target: _back_url %>
+
+      <%else %>
+        Publish at <%= l twitt.publish_at , format: :short %>
+        <%= link_to "edit",edit_twitt_path(twitt) ,class: "text-blue-700" %>
+        <span>,</span>
+        <%= link_to "delete",twitt_path(twitt) , method: :delete , class: "text-blue-700" %>
+      <%end %>
+    </div>
+
+    </div>
+  </div>
+
+</div>
