@@ -18,6 +18,7 @@ class TwittsController < ApplicationController
   def create
     @tweet = Current.user.twitts.new(tweet_params)
     if @tweet.save
+
       redirect_to @tweet
     else
       render :new
@@ -30,6 +31,7 @@ class TwittsController < ApplicationController
 
   def update
     if @tweet.update(tweet_params)
+
       redirect_to twitts_path
     else
       render :edit

@@ -59,3 +59,9 @@ gem "tailwindcss-rails", "~> 0.3.3"
 
 gem "omniauth-twitter", "~> 1.4"
 gem "omniauth-rails_csrf_protection", "~> 1.0"
+
+
+
+gem "sidekiq", "~> 6.2"
+
+gem 'redis-rails', '~> 5.0', '>= 5.0.2'
